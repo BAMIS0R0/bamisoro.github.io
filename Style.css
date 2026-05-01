@@ -1,29 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #0a0a0a;
     color: #f5f5f5;
+    line-height: 1.6;
 }
 
 header {
-    background: black;
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
     padding: 20px;
     text-align: center;
     font-size: 28px;
     color: gold;
     letter-spacing: 2px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 nav {
     background: #111;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 nav a {
     color: #f5f5f5;
-    margin: 0 15px;
+    margin: 0 20px;
     text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -33,44 +45,166 @@ nav a:hover {
 .hero {
     text-align: center;
     padding: 60px 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
 }
 
 .hero h1 {
     color: gold;
-    font-size: 40px;
+    font-size: 42px;
+    margin: 0 0 15px 0;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #ccc;
+    margin: 0;
 }
 
 .section {
-    padding: 30px;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    color: gold;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
 }
 
 .card {
     background: #141414;
-    padding: 20px;
+    padding: 25px;
     border-radius: 12px;
     margin: 20px auto;
     max-width: 700px;
     border: 1px solid #222;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover {
     border-color: gold;
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
 .card h3 {
     color: gold;
+    font-size: 22px;
+    margin-top: 0;
 }
 
-.read-more {
-    color: gold;
-    text-decoration: none;
+.card p {
+    color: #d0d0d0;
+    line-height: 1.8;
 }
 
-footer {
-    background: black;
+/* Emoji Reactions */
+.emoji-reactions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #222;
+}
+
+.emoji-btn {
+    background: #1a1a1a;
+    border: 2px solid #333;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.emoji-btn:hover {
+    border-color: gold;
+    background: #222;
+    transform: scale(1.1);
+}
+
+.emoji-btn.active {
+    background: gold;
+    border-color: gold;
+    color: black;
+    font-weight: bold;
+}
+
+.emoji-count {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact-box {
+    background: #1a1a1a;
+    border: 2px solid gold;
+    padding: 30px;
+    border-radius: 12px;
     text-align: center;
-    padding: 15px;
-    margin-top: 30px;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.contact-box p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-box strong {
+    color: gold;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #888;
+    border-top: 1px solid #222;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        font-size: 24px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .emoji-reactions {
+        gap: 8px;
+    }
+
+    .emoji-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .section {
+        padding: 30px 15px;
+    }
 }
